@@ -466,8 +466,8 @@
 
             function mouseMoveHandler(event) {
                 var bounds = _container.getBoundingClientRect();
-                var x = event.clientX - bounds.left;
-                var y = event.clientY - bounds.top;
+                var x = event.touches[0].clientX - bounds.left;
+                var y = event.touches[0].clientY - bounds.top;
                 var depth = _scale / _distance / 4;
                 _yaw = Math.atan2(_last.point.x - self.width / 4, depth) - Math.atan2(x - self.width / 4, depth);
                 _pitch = Math.atan2(_last.point.y - self.height / 4, depth) - Math.atan2(y - self.height / 4, depth);
